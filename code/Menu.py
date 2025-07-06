@@ -26,8 +26,8 @@ class Menu:
 
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Corn of", C_ORANGE, ((WIN_WIDTH / 2), 70))
-            self.menu_text(50, "Duty", C_ORANGE, ((WIN_WIDTH / 2), 120))
+            self.menu_text(50, "Corn of", C_ORANGE, ((WIN_WIDTH / 2), 40))
+            self.menu_text(50, "Duty", C_ORANGE, ((WIN_WIDTH / 2), 85))
 
             for i in range(len(MENU_OPTION)):
                 cor = C_YELLOW if i == menu_option else C_WHITE

@@ -6,7 +6,7 @@ from pygame.font import Font
 from code.Const import (
     C_YELLOW, SCORE_POS, MENU_OPTION, C_WHITE,
     SCORE_TITLE_FONT_SIZE, SCORE_TEXT_FONT_SIZE,
-    PLAYER1, WIN_HEIGHT, WIN_WIDTH
+    PLAYER1, WIN_HEIGHT, WIN_WIDTH, C_ORANGE, C_RED
 )
 from code.DBProxy import DBProxy
 from code.utils import _quit_game
@@ -34,7 +34,7 @@ class Score:
 
             while saving_team:
                 self.window.blit(self.surf, self.rect)
-                self._score_text(SCORE_TITLE_FONT_SIZE, 'YOU WIN!!', C_YELLOW, SCORE_POS['Title'])
+                self._score_text(SCORE_TITLE_FONT_SIZE, 'YOU WIN!!', C_ORANGE, SCORE_POS['Title'])
                 prompt = 'Digite o NOME DA EQUIPE (4 letras):'
                 self._score_text(SCORE_TEXT_FONT_SIZE, prompt, C_WHITE, SCORE_POS['EnterName'])
                 self._score_text(SCORE_TEXT_FONT_SIZE, team_code, C_WHITE, SCORE_POS['Name'])
@@ -74,7 +74,7 @@ class Score:
 
             while True:
                 self.window.blit(self.surf, self.rect)
-                self._score_text(SCORE_TITLE_FONT_SIZE, 'YOU WIN!!', C_YELLOW, SCORE_POS['Title'])
+                self._score_text(SCORE_TITLE_FONT_SIZE, 'YOU WIN!!', C_ORANGE, SCORE_POS['Title'])
                 self._score_text(SCORE_TEXT_FONT_SIZE, prompt, C_WHITE, SCORE_POS['EnterName'])
                 self._score_text(SCORE_TEXT_FONT_SIZE, name_input, C_WHITE, SCORE_POS['Name'])
 
@@ -115,8 +115,8 @@ class Score:
         running = True
         while running:
             self.window.blit(self.surf, self.rect)
-            self._score_text(SCORE_TITLE_FONT_SIZE, 'TOP 10 SCORE', C_YELLOW, (WIN_WIDTH // 2, 40))
-            self._score_text(SCORE_TEXT_FONT_SIZE, 'NAME     SCORE        DATE', C_YELLOW, (WIN_WIDTH // 2, 80))
+            self._score_text(SCORE_TITLE_FONT_SIZE, 'TOP 10 SCORE', C_RED, (WIN_WIDTH // 2, 40))
+            self._score_text(SCORE_TEXT_FONT_SIZE, 'NAME     SCORE        DATE', C_RED, (WIN_WIDTH // 2, 80))
 
             start_y = 110
             line_height = 25
@@ -124,11 +124,11 @@ class Score:
             for i, (id_, name, score, date) in enumerate(scores):
                 y_pos = start_y + i * line_height - offset
                 if 100 < y_pos < WIN_HEIGHT - 40:
-                    self._score_text(SCORE_TEXT_FONT_SIZE, f'{name:>4}     {score:05d}     {date}', C_YELLOW,
+                    self._score_text(SCORE_TEXT_FONT_SIZE, f'{name:>4}     {score:05d}     {date}', C_RED,
                                      (WIN_WIDTH // 2, y_pos))
 
             if show_scroll_hint:
-                self._score_text(14, "Use ↑ / ↓ para rolar  |  [R] automático", C_WHITE,
+                self._score_text(14, "Use ↑ / ↓ para rolar  |  [R] automático", C_RED,
                                  (WIN_WIDTH // 2, WIN_HEIGHT - 25))
 
             pygame.display.flip()
