@@ -16,12 +16,7 @@ Coletando milhos, atirando ou atacando com o próprio corpo, o objetivo é sobre
 ![GAME LEVEL 2 - 2P](https://github.com/user-attachments/assets/a1f87807-3b83-49d9-b1c8-0d20e8cbc8f8)
 
 ## Game Score
-![GAME SCORE](https://github.com/user-attachments/assets/ce64dca8-1e60-490a-a6ed-93fcd5e7e991)
-
-
-
-
-
+![GAME SCORE](https://github.com/user-attachments/assets/84edf7fe-8be6-4613-8215-44527c7e83a8)
 
 ## 🎮 Como Jogar
 - Escolha 1 Jogador ou 2 Jogadores no menu principal.
