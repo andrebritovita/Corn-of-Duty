@@ -17,7 +17,7 @@ class Game:
             print("Não foi possível inicializar o mixer de áudio. O jogo continuará sem áudio.")
             self.audio_enabled = False
         self.window = pygame.display.set_mode(size=(WIN_WIDTH, WIN_HEIGHT))
-        pygame.display.set_caption("Galinha Desesperada")
+        pygame.display.set_caption("Corn of Duty")
         self.score_screen = Score(self.window)
         self.menu_screen = Menu(self.window, self.audio_enabled)
 
