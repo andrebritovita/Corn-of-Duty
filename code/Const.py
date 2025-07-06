@@ -30,11 +30,10 @@ PLAYER_KEY_ATTACK = {PLAYER1: pygame.K_RCTRL, PLAYER2: pygame.K_LCTRL}
 
 # ------------------- Velocidade -------------------
 ENTITY_SPEED = {
-    # Ajustando as velocidades para um efeito parallax mais pronunciado
     **{f'{BG_DAY}{i}': i + 1 for i in range(5)},  # bgDay0: 1, bgDay1: 2, bgDay2: 3, bgDay3: 4, bgDay4: 5
     **{f'{BG_NIGHT}{i}': i + 1 for i in range(7)},  # bgNight0: 1, bgNight1: 2, ..., bgNight6: 7
-    PLAYER1: 2,  # Velocidade do Player 1 ajustada
-    PLAYER2: 2,  # Velocidade do Player 2 ajustada
+    PLAYER1: 2,
+    PLAYER2: 2,
     SHOT: 6,
     'Enemy1': 2,
     'Enemy2': 3,
@@ -48,8 +47,8 @@ ENTITY_HEALTH = {
     PLAYER2: 100,
     'ChickenDie': 1,
     SHOT: 1,
-    'Enemy1': 50,  # Ajustado para morrer com 1 tiro (1 * 50 = 50)
-    'Enemy2': 50,  # Ajustado para morrer com 1 tiro (1 * 50 = 50)
+    'Enemy1': 50,
+    'Enemy2': 50,
     'EnemyHurt1': 1,
     'EnemyHurt2': 1,
     'EnemyDead1': 1,
@@ -60,10 +59,10 @@ ENTITY_HEALTH = {
 ENTITY_DAMAGE = {
     **{f'{BG_DAY}{i}': 0 for i in range(5)},
     **{f'{BG_NIGHT}{i}': 0 for i in range(7)},
-    PLAYER1: 50,  # Ajustado para matar com 1 ataque
-    PLAYER2: 50,  # Ajustado para matar com 1 ataque
+    PLAYER1: 50,
+    PLAYER2: 50,
     'ChickenDie': 0,
-    SHOT: 50,  # Ajustado para matar com 1 tiro
+    SHOT: 50,
     'Enemy1': 15,
     'Enemy2': 25,
     'EnemyHurt1': 0,
@@ -86,7 +85,7 @@ ENTITY_SCORE = {
     'EnemyHurt2': 0,
     'EnemyDead1': 0,
     'EnemyDead2': 0,
-    'Corn': 10,  # Pontuação para coletar milho
+    'Corn': 10,
 }
 
 # ------------------- Delay de tiro -------------------
@@ -108,7 +107,7 @@ MENU_OPTION = (
 SPAWN_ENEMY_TIME = 3000
 SPAWN_ITEM_TIME = 5000
 TIMEOUT_STEP = 100
-TIMEOUT_LEVEL = 40000  # 40 segundos por fase
+TIMEOUT_LEVEL = 40000
 
 # ------------------- Tamanho da janela -------------------
 WIN_WIDTH = 576
@@ -119,12 +118,11 @@ SCORE_POS = {
     'Title': (WIN_WIDTH // 2, 50),
     'EnterName': (WIN_WIDTH // 2, 100),
     'Name': (WIN_WIDTH // 2, 130),
-    'Label': (WIN_WIDTH // 2, 160),  # Cabeçalho do placar
+    'Label': (WIN_WIDTH // 2, 160),
 
     # Espaçamento vertical maior para os registros
     **{i: (WIN_WIDTH // 2, 190 + i * 30) for i in range(10)}
 }
-
 
 # ------------------- Novas Constantes -------------------
 FRAME_DELAY = 5
@@ -138,5 +136,5 @@ CREDITS_TEXT_START_Y = 80
 CREDITS_TEXT_SPACING = 30
 SCORE_TITLE_FONT_SIZE = 48
 SCORE_TEXT_FONT_SIZE = 20
-INVINCIBILITY_DURATION_FRAMES = 60  # Duração da invencibilidade em frames (ex: 1 segundo a 60 FPS)
-ATTACK_MOVE_FACTOR = 2  # Ajuste este valor para controlar a distância do ataque
+INVINCIBILITY_DURATION_FRAMES = 60
+ATTACK_MOVE_FACTOR = 2

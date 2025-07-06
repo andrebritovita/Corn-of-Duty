@@ -4,9 +4,8 @@ from code.Background import Background
 from code.DeadEnemy import DeadEnemy
 from code.DeadPlayer import DeadPlayer
 from code.Item import Item
-from code.PlayerShot import PlayerShot
 from code.TextFeedback import TextFeedback
-from code.Const import WIN_WIDTH, WIN_HEIGHT, BG_NIGHT, BG_DAY, PLAYER1, PLAYER2, ENTITY_SPEED
+from code.Const import WIN_HEIGHT, BG_NIGHT, BG_DAY, PLAYER1, PLAYER2, ENTITY_SPEED
 
 
 class EntityFactory:
@@ -20,7 +19,7 @@ class EntityFactory:
         'Enemy2': lambda: AnimatedEnemy('Enemy2'),
 
         # Itens
-        'Corn': lambda: Item('Corn', sprite_name='Player1Shot'),  # Usando Player1Shot como sprite para o milho
+        'Corn': lambda: Item('Corn', sprite_name='Player1Shot'),
 
         # Fundos
         'Level1Bg': lambda: [Background(f'{BG_DAY}{i}', (0, 0), ENTITY_SPEED[f'{BG_DAY}{i}']) for i in range(5)],
@@ -31,8 +30,6 @@ class EntityFactory:
         'EnemyDead2': lambda: DeadEnemy('EnemyDead2', (0, 0)),
         'Player1Die': lambda: DeadPlayer((0, 0), player_name='Player1'),
         'Player2Die': lambda: DeadPlayer((0, 0), player_name='Player2'),
-
-        # Feedback de texto (não precisa de sprite de arquivo)
         'TextFeedback': lambda: TextFeedback(text='', position=(0, 0))
     }
 

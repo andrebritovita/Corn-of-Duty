@@ -24,7 +24,6 @@ class Game:
     def run(self):
         while True:
             menu_option = self.menu_screen.run()
-
             match menu_option:
                 case '1 JOGADOR':
                     name1 = self.get_player_name('Player 1')
@@ -49,14 +48,10 @@ class Game:
         for level_name in ['Level1', 'Level2']:
             if game_over:
                 break
-
             level = Level(self.window, level_name, player_data)
-            level_succeeded = level.run()  # Chamada corrigida: sem player_data
-
+            level_succeeded = level.run()
             if not level_succeeded:
                 game_over = True
-
-        # Sempre mostra a tela de pontuação no final do jogo, independentemente de ter vencido ou perdido
         score_screen.save(mode, player_data)
 
     def show_controls(self):
@@ -102,12 +97,10 @@ class Game:
             self.window.fill((0, 0, 0))
             prompt = f'Digite o nome do {player_id} (máx 8 letras):'
             text = font.render(prompt, True, (255, 255, 255))
-            # Centraliza o prompt horizontalmente e ajusta a posição vertical
             prompt_rect = text.get_rect(center=(WIN_WIDTH // 2, WIN_HEIGHT // 2 - 30))
             self.window.blit(text, prompt_rect)
 
             name_surface = font.render(name, True, (255, 255, 0))
-            # Centraliza o nome digitado horizontalmente e ajusta a posição vertical
             name_rect = name_surface.get_rect(center=(WIN_WIDTH // 2, WIN_HEIGHT // 2 + 10))
             self.window.blit(name_surface, name_rect)
 

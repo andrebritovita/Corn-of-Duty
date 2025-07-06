@@ -49,15 +49,13 @@ class Level:
                 player2.corn_collected = self.player_data[PLAYER2]['corn_collected']
                 self.entity_list.append(player2)
 
-        # Ajusta o tempo de spawn dos inimigos para Level2 (mais difícil)
+        # Ajuste do tempo de spawn dos inimigos para Level2 (mais difícil)
         enemy_spawn_time = SPAWN_ENEMY_TIME if self.name == 'Level1' else int(SPAWN_ENEMY_TIME * 0.6)
-
         pygame.time.set_timer(EVENT_ENEMY, enemy_spawn_time)
         pygame.time.set_timer(EVENT_ITEM, SPAWN_ITEM_TIME)
         pygame.time.set_timer(EVENT_TIMEOUT, TIMEOUT_STEP)
 
     def run(self):
-        # Música do nível
         music_file = './asset/Level1.mp3' if self.name == 'Level1' else './asset/Level2.mp3'
         if pygame.mixer.get_init():
             try:

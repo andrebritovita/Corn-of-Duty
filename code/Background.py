@@ -9,11 +9,9 @@ class Background(Entity):
         self.health = 999_999
         self.speed = speed
 
-        # Carrega a imagem original e redimensiona
         self.image = pygame.image.load(f'./asset/{name}.png').convert_alpha()
         self.image = pygame.transform.scale(self.image, (WIN_WIDTH, WIN_HEIGHT))
 
-        # Posições dos dois blocos de fundo
         self.x1 = 0
         self.x2 = WIN_WIDTH
 
@@ -21,7 +19,6 @@ class Background(Entity):
         self.x1 -= self.speed
         self.x2 -= self.speed
 
-        # Reposicionamento cíclico
         if self.x1 <= -WIN_WIDTH:
             self.x1 = self.x2 + WIN_WIDTH
         if self.x2 <= -WIN_WIDTH:

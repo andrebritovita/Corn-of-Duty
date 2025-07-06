@@ -14,7 +14,7 @@ class AnimatedEnemy(Entity):
 
         super().__init__(name, position)
 
-        self.original_name = name  # Ex: Enemy1 ou Enemy2
+        self.original_name = name
         self.flip = flip
         self.frames_count = frames_count
         self.frames = self.load_frames(self.original_name)

@@ -6,7 +6,7 @@ from pygame.font import Font
 from code.Const import (
     C_YELLOW, SCORE_POS, MENU_OPTION, C_WHITE,
     SCORE_TITLE_FONT_SIZE, SCORE_TEXT_FONT_SIZE,
-    PLAYER1, PLAYER2, WIN_HEIGHT, WIN_WIDTH
+    PLAYER1, WIN_HEIGHT, WIN_WIDTH
 )
 from code.DBProxy import DBProxy
 from code.utils import _quit_game
@@ -59,7 +59,7 @@ class Score:
                                 })
 
                             self.show()
-                            return  # <- sai da função corretamente após salvar
+                            return
                         elif event.key == K_BACKSPACE:
                             team_code = team_code[:-1]
                         elif len(team_code) < 4:
@@ -107,7 +107,6 @@ class Score:
 
         db = DBProxy('DBScore')
         scores = db.retrieve_all()
-
         offset = 0
         scroll_speed = 1
         auto_scroll = False if len(scores) > 10 else True
@@ -129,7 +128,8 @@ class Score:
                                      (WIN_WIDTH // 2, y_pos))
 
             if show_scroll_hint:
-                self._score_text(14, "Use ↑ / ↓ para rolar  |  [R] automático", C_WHITE, (WIN_WIDTH // 2, WIN_HEIGHT - 25))
+                self._score_text(14, "Use ↑ / ↓ para rolar  |  [R] automático", C_WHITE,
+                                 (WIN_WIDTH // 2, WIN_HEIGHT - 25))
 
             pygame.display.flip()
             pygame.time.delay(50)
