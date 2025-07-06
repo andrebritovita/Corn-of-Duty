@@ -57,6 +57,15 @@ class Level:
         pygame.time.set_timer(EVENT_TIMEOUT, TIMEOUT_STEP)
 
     def run(self):
+        # Música do nível
+        music_file = './asset/Level1.mp3' if self.name == 'Level1' else './asset/Level2.mp3'
+        if pygame.mixer.get_init():
+            try:
+                pygame.mixer_music.load(music_file)
+                pygame.mixer_music.set_volume(0.3)
+                pygame.mixer_music.play(-1)
+            except pygame.error:
+                print(f"[AVISO] Música {music_file} não pôde ser carregada.")
         clock = pygame.time.Clock()
         running = True
         level_succeeded = False
