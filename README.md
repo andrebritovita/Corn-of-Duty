@@ -6,6 +6,23 @@ Um mini jogo em Python onde você controla uma galinha corajosa que enfrenta uma
 ## 🐔 Sobre o Jogo
 Coletando milhos, atirando ou atacando com o próprio corpo, o objetivo é sobreviver até o tempo acabar e passar de fase.
 
+## Game Menu 
+![GAME MNU](https://github.com/user-attachments/assets/50704b05-475b-4fca-9cca-d194306c424d)
+
+## Game Level 1
+![GAME LEVEL 1 - 2P](https://github.com/user-attachments/assets/b5f8b655-7437-40e0-a92c-ba48bd5e74c4)
+
+## Game Level 2
+![GAME LEVEL 2 - 2P](https://github.com/user-attachments/assets/a1f87807-3b83-49d9-b1c8-0d20e8cbc8f8)
+
+## Game Score
+![GAME SCORE](https://github.com/user-attachments/assets/ce64dca8-1e60-490a-a6ed-93fcd5e7e991)
+
+
+
+
+
+
 ## 🎮 Como Jogar
 - Escolha 1 Jogador ou 2 Jogadores no menu principal.
 - Use os controles abaixo para mover, atacar e atirar.
