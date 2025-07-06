@@ -4,9 +4,9 @@ from pygame.locals import KEYDOWN, K_RETURN, K_BACKSPACE, K_ESCAPE
 from pygame.font import Font
 
 from code.Const import (
-    C_YELLOW, SCORE_POS, MENU_OPTION, C_WHITE,
+    C_ORANGE, SCORE_POS, MENU_OPTION, C_WHITE,
     SCORE_TITLE_FONT_SIZE, SCORE_TEXT_FONT_SIZE,
-    PLAYER1, WIN_HEIGHT, WIN_WIDTH, C_ORANGE, C_RED
+    PLAYER1, WIN_HEIGHT, WIN_WIDTH, C_RED
 )
 from code.DBProxy import DBProxy
 from code.utils import _quit_game
@@ -35,7 +35,7 @@ class Score:
             while saving_team:
                 self.window.blit(self.surf, self.rect)
                 self._score_text(SCORE_TITLE_FONT_SIZE, 'YOU WIN!!', C_ORANGE, SCORE_POS['Title'])
-                prompt = 'Digite o NOME DA EQUIPE (4 letras):'
+                prompt = 'Digite o NOME DA EQUIPE (até 8 letras):'
                 self._score_text(SCORE_TEXT_FONT_SIZE, prompt, C_ORANGE, SCORE_POS['EnterName'])
                 self._score_text(SCORE_TEXT_FONT_SIZE, team_code, C_ORANGE, SCORE_POS['Name'])
 
@@ -43,17 +43,17 @@ class Score:
                     if event.type == pygame.QUIT:
                         _quit_game()
                     elif event.type == KEYDOWN:
-                        if event.key == K_RETURN and len(team_code) == 4:
+                        if event.key == K_RETURN and len(team_code) > 0:
                             total_score = sum(p['score'] for p in player_data.values())
                             db.save({
-                                'name': 'EQ-' + team_code.upper(),
+                                'name': 'EQ-' + team_code.upper()[:8],
                                 'score': total_score,
                                 'date': self._get_formatted_date()
                             })
 
                             for data in player_data.values():
                                 db.save({
-                                    'name': data['name'].upper(),
+                                    'name': data['name'].upper()[:8],
                                     'score': data['score'],
                                     'date': self._get_formatted_date()
                                 })
@@ -62,7 +62,7 @@ class Score:
                             return
                         elif event.key == K_BACKSPACE:
                             team_code = team_code[:-1]
-                        elif len(team_code) < 4:
+                        elif len(team_code) < 8:
                             team_code += event.unicode.upper()
 
                 pygame.display.flip()
@@ -70,7 +70,7 @@ class Score:
         else:  # 1 JOGADOR
             name_input = ''
             score = player_data[PLAYER1]['score']
-            prompt = f'Digite seu apelido (4 letras):'
+            prompt = f'Digite seu apelido (até 8 letras):'
 
             while True:
                 self.window.blit(self.surf, self.rect)
@@ -82,9 +82,9 @@ class Score:
                     if event.type == pygame.QUIT:
                         _quit_game()
                     elif event.type == KEYDOWN:
-                        if event.key == K_RETURN and len(name_input) == 4:
+                        if event.key == K_RETURN and len(name_input) > 0:
                             db.save({
-                                'name': name_input.upper(),
+                                'name': name_input.upper()[:8],
                                 'score': score,
                                 'date': self._get_formatted_date()
                             })
@@ -92,7 +92,7 @@ class Score:
                             return
                         elif event.key == K_BACKSPACE:
                             name_input = name_input[:-1]
-                        elif len(name_input) < 4:
+                        elif len(name_input) < 8:
                             name_input += event.unicode.upper()
 
                 pygame.display.flip()

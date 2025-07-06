@@ -40,7 +40,7 @@ class EntityMediator:
         if pygame.mixer.get_init():
             try:
                 pickup_sound = pygame.mixer.Sound("./asset/pickup.mp3")
-                pickup_sound.set_volume(7.0)
+                pickup_sound.set_volume(14.0)
                 pickup_sound.play()
             except pygame.error:
                 print("[AVISO] Erro ao tocar pickup.mp3")

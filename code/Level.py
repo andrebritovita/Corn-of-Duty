@@ -60,7 +60,7 @@ class Level:
         if pygame.mixer.get_init():
             try:
                 pygame.mixer_music.load(music_file)
-                pygame.mixer_music.set_volume(0.3)
+                pygame.mixer_music.set_volume(0.2)
                 pygame.mixer_music.play(-1)
             except pygame.error:
                 print(f"[AVISO] Música {music_file} não pôde ser carregada.")
