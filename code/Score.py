@@ -4,7 +4,7 @@ from pygame.locals import KEYDOWN, K_RETURN, K_BACKSPACE, K_ESCAPE
 from pygame.font import Font
 
 from code.Const import (
-    C_ORANGE, SCORE_POS, MENU_OPTION, C_WHITE,
+    C_ORANGE, SCORE_POS, MENU_OPTION,
     SCORE_TITLE_FONT_SIZE, SCORE_TEXT_FONT_SIZE,
     PLAYER1, WIN_HEIGHT, WIN_WIDTH, C_RED
 )
