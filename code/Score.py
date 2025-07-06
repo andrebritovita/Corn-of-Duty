@@ -36,8 +36,8 @@ class Score:
                 self.window.blit(self.surf, self.rect)
                 self._score_text(SCORE_TITLE_FONT_SIZE, 'YOU WIN!!', C_ORANGE, SCORE_POS['Title'])
                 prompt = 'Digite o NOME DA EQUIPE (4 letras):'
-                self._score_text(SCORE_TEXT_FONT_SIZE, prompt, C_WHITE, SCORE_POS['EnterName'])
-                self._score_text(SCORE_TEXT_FONT_SIZE, team_code, C_WHITE, SCORE_POS['Name'])
+                self._score_text(SCORE_TEXT_FONT_SIZE, prompt, C_ORANGE, SCORE_POS['EnterName'])
+                self._score_text(SCORE_TEXT_FONT_SIZE, team_code, C_ORANGE, SCORE_POS['Name'])
 
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
@@ -75,8 +75,8 @@ class Score:
             while True:
                 self.window.blit(self.surf, self.rect)
                 self._score_text(SCORE_TITLE_FONT_SIZE, 'YOU WIN!!', C_ORANGE, SCORE_POS['Title'])
-                self._score_text(SCORE_TEXT_FONT_SIZE, prompt, C_WHITE, SCORE_POS['EnterName'])
-                self._score_text(SCORE_TEXT_FONT_SIZE, name_input, C_WHITE, SCORE_POS['Name'])
+                self._score_text(SCORE_TEXT_FONT_SIZE, prompt, C_ORANGE, SCORE_POS['EnterName'])
+                self._score_text(SCORE_TEXT_FONT_SIZE, name_input, C_ORANGE, SCORE_POS['Name'])
 
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
